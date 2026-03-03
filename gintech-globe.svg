@@ -1,0 +1,401 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" width="800" height="800">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#060D1A"/>
+      <stop offset="50%" style="stop-color:#0B1829"/>
+      <stop offset="100%" style="stop-color:#071220"/>
+    </linearGradient>
+    <radialGradient id="globeGlow" cx="50%" cy="50%" r="40%">
+      <stop offset="0%" style="stop-color:#0E7C86;stop-opacity:0.2"/>
+      <stop offset="60%" style="stop-color:#0E7C86;stop-opacity:0.05"/>
+      <stop offset="100%" style="stop-color:#060D1A;stop-opacity:0"/>
+    </radialGradient>
+    <radialGradient id="globeInner" cx="42%" cy="38%" r="50%">
+      <stop offset="0%" style="stop-color:#0E7C86;stop-opacity:0.08"/>
+      <stop offset="100%" style="stop-color:#060D1A;stop-opacity:0"/>
+    </radialGradient>
+    <radialGradient id="globeRim" cx="50%" cy="50%" r="50%">
+      <stop offset="90%" style="stop-color:transparent"/>
+      <stop offset="97%" style="stop-color:#0E7C86;stop-opacity:0.18"/>
+      <stop offset="100%" style="stop-color:#22D3EE;stop-opacity:0.08"/>
+    </radialGradient>
+    <linearGradient id="hexFill" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0E7C86;stop-opacity:0.2"/>
+      <stop offset="100%" style="stop-color:#0A5E68;stop-opacity:0.06"/>
+    </linearGradient>
+    <linearGradient id="hexActive" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0E7C86;stop-opacity:0.3"/>
+      <stop offset="100%" style="stop-color:#22D3EE;stop-opacity:0.12"/>
+    </linearGradient>
+    <filter id="glow"><feGaussianBlur stdDeviation="2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <filter id="softGlow"><feGaussianBlur stdDeviation="4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <filter id="bigGlow"><feGaussianBlur stdDeviation="25" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <pattern id="grid" width="30" height="30" patternUnits="userSpaceOnUse">
+      <path d="M 30 0 L 0 0 0 30" fill="none" stroke="rgba(14,124,134,0.03)" stroke-width="0.4"/>
+    </pattern>
+    <clipPath id="globeClip"><circle cx="400" cy="400" r="180"/></clipPath>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="800" fill="url(#bgGrad)"/>
+  <rect width="800" height="800" fill="url(#grid)"/>
+  <rect width="800" height="800" fill="url(#globeGlow)"/>
+
+  <!-- Binary columns -->
+  <g opacity="0.4">
+    <text fill="rgba(34,211,238,0.06)" font-family="'Courier New',monospace" font-size="10" letter-spacing="1">
+      <tspan x="10" y="22">01101001</tspan><tspan x="10" y="40">10010110</tspan>
+      <tspan x="10" y="58">01001101</tspan><tspan x="10" y="76">11010010</tspan>
+      <tspan x="10" y="94">00110101</tspan><tspan x="10" y="112">10101100</tspan>
+      <tspan x="10" y="130">01110011</tspan><tspan x="10" y="148">10010110</tspan>
+      <tspan x="10" y="166">01101001</tspan><tspan x="10" y="184">11001010</tspan>
+      <tspan x="10" y="202">00101101</tspan><tspan x="10" y="220">10110010</tspan>
+    </text>
+    <text fill="rgba(14,124,134,0.05)" font-family="'Courier New',monospace" font-size="10" letter-spacing="1">
+      <tspan x="88" y="30">10110100</tspan><tspan x="88" y="48">01001011</tspan>
+      <tspan x="88" y="66">11100101</tspan><tspan x="88" y="84">00011010</tspan>
+      <tspan x="88" y="102">10100111</tspan><tspan x="88" y="120">01010010</tspan>
+      <tspan x="88" y="138">11011001</tspan><tspan x="88" y="156">00100110</tspan>
+    </text>
+    <text fill="rgba(34,211,238,0.04)" font-family="'Courier New',monospace" font-size="10" letter-spacing="1">
+      <tspan x="710" y="25">11010011</tspan><tspan x="710" y="43">00101100</tspan>
+      <tspan x="710" y="61">10010111</tspan><tspan x="710" y="79">01110010</tspan>
+      <tspan x="710" y="97">10001101</tspan><tspan x="710" y="115">01011010</tspan>
+    </text>
+  </g>
+
+  <!-- Vertical light streaks -->
+  <g opacity="0.08">
+    <line x1="25" y1="0" x2="25" y2="300" stroke="#22D3EE" stroke-width="0.7"/>
+    <line x1="52" y1="0" x2="52" y2="260" stroke="#0E7C86" stroke-width="0.4"/>
+    <line x1="140" y1="0" x2="140" y2="280" stroke="#22D3EE" stroke-width="0.3"/>
+  </g>
+
+  <!-- ============ GLOBE ============ -->
+  <g>
+    <circle cx="400" cy="400" r="210" fill="url(#globeGlow)" filter="url(#bigGlow)" opacity="0.6"/>
+    <!-- Outer ring -->
+    <circle cx="400" cy="400" r="180" fill="none" stroke="rgba(14,124,134,0.45)" stroke-width="1.5"/>
+    <circle cx="400" cy="400" r="180" fill="url(#globeInner)"/>
+    <circle cx="400" cy="400" r="180" fill="url(#globeRim)"/>
+    <circle cx="400" cy="400" r="177" fill="none" stroke="rgba(34,211,238,0.05)" stroke-width="0.4"/>
+
+    <g clip-path="url(#globeClip)">
+      <!-- Longitude lines -->
+      <ellipse cx="400" cy="400" rx="180" ry="180" fill="none" stroke="rgba(14,124,134,0.12)" stroke-width="0.5"/>
+      <ellipse cx="400" cy="400" rx="140" ry="180" fill="none" stroke="rgba(14,124,134,0.1)" stroke-width="0.4"/>
+      <ellipse cx="400" cy="400" rx="90" ry="180" fill="none" stroke="rgba(14,124,134,0.08)" stroke-width="0.4"/>
+      <ellipse cx="400" cy="400" rx="38" ry="180" fill="none" stroke="rgba(14,124,134,0.07)" stroke-width="0.3"/>
+      <!-- Latitude lines -->
+      <ellipse cx="400" cy="295" rx="155" ry="14" fill="none" stroke="rgba(14,124,134,0.09)" stroke-width="0.4"/>
+      <ellipse cx="400" cy="345" rx="172" ry="12" fill="none" stroke="rgba(14,124,134,0.1)" stroke-width="0.4"/>
+      <ellipse cx="400" cy="400" rx="180" ry="11" fill="none" stroke="rgba(14,124,134,0.12)" stroke-width="0.5"/>
+      <ellipse cx="400" cy="455" rx="172" ry="12" fill="none" stroke="rgba(14,124,134,0.1)" stroke-width="0.4"/>
+      <ellipse cx="400" cy="505" rx="155" ry="14" fill="none" stroke="rgba(14,124,134,0.09)" stroke-width="0.4"/>
+
+      <!-- ===== DIGITAL DOT-MATRIX WORLD MAP ===== -->
+      <!-- Each continent is rendered as clusters of small dots to create a digital/LED map look -->
+      <g fill="#0E7C86" opacity="0.7">
+
+        <!-- NORTH AMERICA -->
+        <!-- Alaska -->
+        <circle cx="268" cy="298" r="2.2"/><circle cx="260" cy="302" r="2"/><circle cx="254" cy="306" r="1.8"/>
+        <circle cx="275" cy="295" r="1.8"/><circle cx="264" cy="295" r="1.5"/>
+        <!-- Canada -->
+        <circle cx="290" cy="295" r="2.2"/><circle cx="298" cy="290" r="2.2"/><circle cx="306" cy="288" r="2.2"/>
+        <circle cx="314" cy="286" r="2.2"/><circle cx="322" cy="285" r="2.2"/><circle cx="330" cy="286" r="2"/>
+        <circle cx="338" cy="288" r="2"/><circle cx="285" cy="300" r="2"/><circle cx="293" cy="298" r="2"/>
+        <circle cx="301" cy="296" r="2"/><circle cx="309" cy="294" r="2"/><circle cx="317" cy="293" r="2"/>
+        <circle cx="325" cy="292" r="2"/><circle cx="333" cy="294" r="1.8"/>
+        <circle cx="295" cy="305" r="1.8"/><circle cx="303" cy="303" r="1.8"/><circle cx="311" cy="301" r="1.8"/>
+        <circle cx="319" cy="300" r="1.8"/><circle cx="340" cy="295" r="1.5"/>
+        <!-- USA -->
+        <circle cx="285" cy="312" r="2.2"/><circle cx="293" cy="310" r="2.2"/><circle cx="301" cy="309" r="2.2"/>
+        <circle cx="309" cy="308" r="2.2"/><circle cx="317" cy="308" r="2.2"/><circle cx="325" cy="309" r="2"/>
+        <circle cx="333" cy="310" r="2"/><circle cx="288" cy="320" r="2"/><circle cx="296" cy="318" r="2"/>
+        <circle cx="304" cy="316" r="2"/><circle cx="312" cy="315" r="2"/><circle cx="320" cy="315" r="2"/>
+        <circle cx="328" cy="316" r="1.8"/><circle cx="295" cy="326" r="1.8"/>
+        <circle cx="303" cy="324" r="1.8"/><circle cx="311" cy="323" r="1.8"/><circle cx="319" cy="323" r="1.8"/>
+        <!-- Mexico / Central America -->
+        <circle cx="290" cy="334" r="1.8"/><circle cx="296" cy="338" r="1.8"/>
+        <circle cx="293" cy="344" r="1.5"/><circle cx="298" cy="348" r="1.5"/>
+        <circle cx="302" cy="352" r="1.3"/><circle cx="305" cy="358" r="1.2"/>
+
+        <!-- SOUTH AMERICA -->
+        <circle cx="320" cy="370" r="2"/><circle cx="328" cy="372" r="2"/><circle cx="324" cy="378" r="2.2"/>
+        <circle cx="332" cy="380" r="2.2"/><circle cx="340" cy="378" r="2"/><circle cx="336" cy="386" r="2.2"/>
+        <circle cx="328" cy="386" r="2.2"/><circle cx="320" cy="384" r="2"/>
+        <circle cx="332" cy="394" r="2.2"/><circle cx="340" cy="392" r="2"/><circle cx="324" cy="392" r="2"/>
+        <circle cx="328" cy="402" r="2.2"/><circle cx="336" cy="400" r="2"/><circle cx="344" cy="398" r="1.8"/>
+        <circle cx="330" cy="410" r="2"/><circle cx="338" cy="408" r="1.8"/>
+        <circle cx="332" cy="418" r="2"/><circle cx="326" cy="416" r="1.8"/>
+        <circle cx="328" cy="426" r="1.8"/><circle cx="322" cy="424" r="1.5"/>
+        <circle cx="324" cy="434" r="1.5"/><circle cx="320" cy="442" r="1.3"/>
+        <circle cx="316" cy="450" r="1.2"/><circle cx="318" cy="458" r="1"/>
+
+        <!-- EUROPE -->
+        <!-- Scandinavia -->
+        <circle cx="420" cy="278" r="1.5"/><circle cx="426" cy="274" r="1.5"/>
+        <circle cx="424" cy="284" r="1.5"/><circle cx="430" cy="280" r="1.3"/>
+        <!-- UK/Ireland -->
+        <circle cx="405" cy="296" r="1.8"/><circle cx="400" cy="300" r="1.5"/>
+        <circle cx="408" cy="302" r="1.5"/>
+        <!-- Western Europe -->
+        <circle cx="415" cy="300" r="2"/><circle cx="422" cy="298" r="2"/><circle cx="430" cy="296" r="1.8"/>
+        <circle cx="412" cy="308" r="2"/><circle cx="420" cy="306" r="2"/><circle cx="428" cy="304" r="2"/>
+        <circle cx="436" cy="302" r="1.8"/>
+        <!-- Southern/Eastern Europe -->
+        <circle cx="416" cy="314" r="1.8"/><circle cx="424" cy="312" r="1.8"/><circle cx="432" cy="310" r="1.8"/>
+        <circle cx="440" cy="308" r="1.5"/><circle cx="420" cy="320" r="1.5"/><circle cx="428" cy="318" r="1.5"/>
+        <circle cx="436" cy="316" r="1.5"/><circle cx="444" cy="314" r="1.3"/>
+        <circle cx="448" cy="304" r="1.5"/><circle cx="452" cy="310" r="1.3"/>
+
+        <!-- AFRICA -->
+        <circle cx="420" cy="340" r="2"/><circle cx="428" cy="338" r="2"/><circle cx="436" cy="340" r="2"/>
+        <circle cx="416" cy="348" r="2"/><circle cx="424" cy="346" r="2.2"/><circle cx="432" cy="348" r="2.2"/>
+        <circle cx="440" cy="346" r="2"/><circle cx="448" cy="344" r="1.8"/>
+        <circle cx="418" cy="356" r="2"/><circle cx="426" cy="358" r="2.2"/><circle cx="434" cy="356" r="2.2"/>
+        <circle cx="442" cy="354" r="2"/><circle cx="450" cy="352" r="1.8"/>
+        <circle cx="420" cy="366" r="2"/><circle cx="428" cy="368" r="2.2"/><circle cx="436" cy="366" r="2"/>
+        <circle cx="444" cy="364" r="1.8"/>
+        <circle cx="422" cy="376" r="2"/><circle cx="430" cy="378" r="2"/><circle cx="438" cy="376" r="1.8"/>
+        <circle cx="424" cy="386" r="1.8"/><circle cx="432" cy="388" r="1.8"/><circle cx="440" cy="386" r="1.5"/>
+        <circle cx="426" cy="396" r="1.8"/><circle cx="434" cy="398" r="1.5"/>
+        <circle cx="428" cy="406" r="1.5"/><circle cx="436" cy="408" r="1.3"/>
+        <circle cx="430" cy="416" r="1.3"/><circle cx="432" cy="424" r="1.2"/>
+        <circle cx="434" cy="432" r="1"/>
+
+        <!-- MIDDLE EAST -->
+        <circle cx="456" cy="330" r="1.8"/><circle cx="462" cy="334" r="1.8"/><circle cx="468" cy="332" r="1.5"/>
+        <circle cx="458" cy="340" r="1.5"/><circle cx="464" cy="342" r="1.5"/><circle cx="470" cy="340" r="1.3"/>
+        <circle cx="460" cy="348" r="1.3"/><circle cx="466" cy="350" r="1.2"/>
+
+        <!-- ASIA / RUSSIA -->
+        <circle cx="450" cy="290" r="2"/><circle cx="458" cy="288" r="2"/><circle cx="466" cy="286" r="2"/>
+        <circle cx="474" cy="285" r="2"/><circle cx="482" cy="284" r="2"/><circle cx="490" cy="283" r="2"/>
+        <circle cx="498" cy="282" r="2"/><circle cx="506" cy="284" r="2"/><circle cx="514" cy="286" r="1.8"/>
+        <circle cx="522" cy="288" r="1.8"/><circle cx="530" cy="290" r="1.5"/>
+        <circle cx="454" cy="298" r="1.8"/><circle cx="462" cy="296" r="1.8"/><circle cx="470" cy="294" r="1.8"/>
+        <circle cx="478" cy="293" r="1.8"/><circle cx="486" cy="292" r="1.8"/><circle cx="494" cy="291" r="1.8"/>
+        <circle cx="502" cy="292" r="1.8"/><circle cx="510" cy="294" r="1.5"/><circle cx="518" cy="296" r="1.5"/>
+        <circle cx="526" cy="298" r="1.3"/>
+        <!-- Central Asia -->
+        <circle cx="468" cy="304" r="1.5"/><circle cx="476" cy="302" r="1.5"/><circle cx="484" cy="300" r="1.5"/>
+        <circle cx="492" cy="300" r="1.5"/><circle cx="500" cy="302" r="1.3"/>
+
+        <!-- INDIA -->
+        <circle cx="476" cy="330" r="1.8"/><circle cx="484" cy="328" r="1.8"/><circle cx="480" cy="338" r="2"/>
+        <circle cx="488" cy="336" r="1.8"/><circle cx="484" cy="346" r="1.8"/><circle cx="480" cy="354" r="1.5"/>
+        <circle cx="476" cy="362" r="1.3"/><circle cx="478" cy="370" r="1.2"/>
+
+        <!-- CHINA / EAST ASIA -->
+        <circle cx="500" cy="310" r="1.8"/><circle cx="508" cy="308" r="1.8"/><circle cx="516" cy="306" r="1.8"/>
+        <circle cx="524" cy="308" r="1.5"/><circle cx="504" cy="318" r="1.8"/><circle cx="512" cy="316" r="1.8"/>
+        <circle cx="520" cy="314" r="1.5"/><circle cx="528" cy="316" r="1.3"/>
+        <circle cx="508" cy="326" r="1.5"/><circle cx="516" cy="324" r="1.5"/><circle cx="524" cy="326" r="1.3"/>
+
+        <!-- JAPAN -->
+        <circle cx="540" cy="310" r="1.5"/><circle cx="544" cy="318" r="1.5"/>
+        <circle cx="542" cy="326" r="1.3"/><circle cx="538" cy="305" r="1.2"/>
+
+        <!-- SOUTHEAST ASIA -->
+        <circle cx="510" cy="338" r="1.3"/><circle cx="518" cy="340" r="1.3"/>
+        <circle cx="514" cy="348" r="1.2"/><circle cx="522" cy="346" r="1.2"/>
+        <circle cx="510" cy="354" r="1"/><circle cx="518" cy="356" r="1"/>
+        <circle cx="526" cy="352" r="1"/><circle cx="530" cy="360" r="1"/>
+
+        <!-- AUSTRALIA -->
+        <circle cx="520" cy="420" r="2"/><circle cx="528" cy="418" r="2"/><circle cx="536" cy="420" r="2"/>
+        <circle cx="544" cy="418" r="1.8"/><circle cx="516" cy="428" r="2"/><circle cx="524" cy="430" r="2.2"/>
+        <circle cx="532" cy="428" r="2.2"/><circle cx="540" cy="426" r="2"/><circle cx="548" cy="424" r="1.5"/>
+        <circle cx="520" cy="438" r="2"/><circle cx="528" cy="440" r="2"/><circle cx="536" cy="438" r="2"/>
+        <circle cx="544" cy="434" r="1.5"/><circle cx="524" cy="448" r="1.8"/><circle cx="532" cy="448" r="1.8"/>
+        <circle cx="540" cy="444" r="1.3"/><circle cx="528" cy="456" r="1.3"/><circle cx="534" cy="454" r="1.2"/>
+
+        <!-- NEW ZEALAND -->
+        <circle cx="558" cy="452" r="1.3"/><circle cx="560" cy="460" r="1.2"/>
+        <circle cx="556" cy="466" r="1"/>
+
+        <!-- GREENLAND -->
+        <circle cx="340" cy="272" r="1.8"/><circle cx="348" cy="270" r="1.8"/><circle cx="356" cy="272" r="1.5"/>
+        <circle cx="344" cy="280" r="1.5"/><circle cx="352" cy="278" r="1.5"/><circle cx="348" cy="268" r="1.3"/>
+      </g>
+
+      <!-- Brighter highlight dots on major cities -->
+      <g fill="#22D3EE" filter="url(#softGlow)">
+        <circle cx="310" cy="315" r="2.5" opacity="0.9"/>  <!-- New York -->
+        <circle cx="290" cy="320" r="2" opacity="0.7"/>     <!-- Chicago -->
+        <circle cx="415" cy="306" r="2.5" opacity="0.8"/>   <!-- London -->
+        <circle cx="430" cy="310" r="2" opacity="0.7"/>     <!-- Frankfurt -->
+        <circle cx="510" cy="310" r="2.5" opacity="0.7"/>   <!-- Beijing -->
+        <circle cx="540" cy="314" r="2" opacity="0.7"/>     <!-- Tokyo -->
+        <circle cx="485" cy="340" r="2" opacity="0.6"/>     <!-- Mumbai -->
+        <circle cx="530" cy="430" r="2" opacity="0.6"/>     <!-- Sydney -->
+        <circle cx="330" cy="385" r="2" opacity="0.6"/>     <!-- São Paulo -->
+        <circle cx="435" cy="360" r="1.8" opacity="0.5"/>   <!-- Lagos -->
+        <circle cx="462" cy="336" r="1.8" opacity="0.5"/>   <!-- Dubai -->
+      </g>
+
+      <!-- Connection arcs between major cities -->
+      <g stroke="rgba(34,211,238,0.2)" stroke-width="0.7" fill="none">
+        <path d="M 310,315 Q 365,280 415,306"/>          <!-- NY to London -->
+        <path d="M 415,306 Q 470,290 510,310"/>          <!-- London to Beijing -->
+        <path d="M 510,310 Q 528,308 540,314"/>          <!-- Beijing to Tokyo -->
+        <path d="M 415,306 Q 442,320 462,336"/>          <!-- London to Dubai -->
+        <path d="M 462,336 Q 475,335 485,340"/>          <!-- Dubai to Mumbai -->
+        <path d="M 510,310 Q 520,370 530,430"/>          <!-- Beijing to Sydney -->
+        <path d="M 310,315 Q 315,350 330,385"/>          <!-- NY to São Paulo -->
+        <path d="M 430,310 Q 440,330 435,360"/>          <!-- Frankfurt to Lagos -->
+      </g>
+
+      <!-- Orbital ring -->
+      <ellipse cx="400" cy="400" rx="195" ry="65" fill="none" stroke="rgba(34,211,238,0.08)" stroke-width="0.6" transform="rotate(-20,400,400)" stroke-dasharray="5,4"/>
+    </g>
+
+    <!-- Globe highlight -->
+    <path d="M 290,290 Q 340,240 420,228" fill="none" stroke="rgba(34,211,238,0.15)" stroke-width="1.5" stroke-linecap="round"/>
+    <path d="M 300,308 Q 338,262 405,248" fill="none" stroke="rgba(34,211,238,0.07)" stroke-width="0.8" stroke-linecap="round"/>
+  </g>
+
+  <!-- ============ ORBIT RING FOR ICONS ============ -->
+  <circle cx="400" cy="400" r="275" fill="none" stroke="rgba(14,124,134,0.1)" stroke-width="0.7" stroke-dasharray="6,5"/>
+  <circle cx="400" cy="400" r="275" fill="none" stroke="rgba(34,211,238,0.03)" stroke-width="2.5"/>
+
+  <!-- Connecting lines from globe to each hex (globe edge to icon) -->
+  <g stroke="rgba(34,211,238,0.09)" stroke-width="0.5" stroke-dasharray="3,4">
+    <!-- 7 icons at equal 51.4° intervals. Positions on r=275 circle -->
+    <!-- 0: top (270°) -->
+    <line x1="400" y1="220" x2="400" y2="152"/>
+    <!-- 1: top-right (321.4°) -->
+    <line x1="547" y1="254" x2="595" y2="215"/>
+    <!-- 2: right (12.9°) -->
+    <line x1="575" y1="421" x2="648" y2="434"/>
+    <!-- 3: bottom-right (64.3°) -->
+    <line x1="507" y1="560" x2="545" y2="610"/>
+    <!-- 4: bottom-left (115.7°) -->
+    <line x1="293" y1="560" x2="255" y2="610"/>
+    <!-- 5: left (167.1°) -->
+    <line x1="225" y1="421" x2="152" y2="434"/>
+    <!-- 6: top-left (218.6°) -->
+    <line x1="253" y1="254" x2="205" y2="215"/>
+  </g>
+
+  <!-- ============ 7 HEXAGONAL ICONS (evenly spaced on r=275) ============ -->
+
+  <!-- Icon 0: GEN AI (Top, 270°) → x=400, y=125 -->
+  <g transform="translate(400, 125)" filter="url(#glow)">
+    <polygon points="0,-35 30,-17.5 30,17.5 0,35 -30,17.5 -30,-17.5" fill="url(#hexActive)" stroke="rgba(34,211,238,0.55)" stroke-width="1.2"/>
+    <path d="M -2,-11 Q -10,-9 -10,-3 Q -12,3 -6,6 Q -4,11 2,11 Q 8,11 10,6 Q 14,3 12,-3 Q 12,-9 4,-11 Q 1,-13 -2,-11"
+          fill="none" stroke="rgba(34,211,238,0.9)" stroke-width="1.1"/>
+    <path d="M 1,-11 Q -1,-4 1,0 Q -1,4 1,11" fill="none" stroke="rgba(34,211,238,0.4)" stroke-width="0.6"/>
+    <line x1="-6" y1="-4" x2="1" y2="-2" stroke="rgba(34,211,238,0.35)" stroke-width="0.5"/>
+    <line x1="-4" y1="4" x2="1" y2="2" stroke="rgba(34,211,238,0.35)" stroke-width="0.5"/>
+    <line x1="7" y1="-3" x2="1" y2="-1" stroke="rgba(34,211,238,0.35)" stroke-width="0.5"/>
+    <line x1="6" y1="5" x2="1" y2="2" stroke="rgba(34,211,238,0.35)" stroke-width="0.5"/>
+    <g transform="translate(12,-13)" opacity="0.85">
+      <line x1="0" y1="-3.5" x2="0" y2="3.5" stroke="#22D3EE" stroke-width="1"/>
+      <line x1="-3.5" y1="0" x2="3.5" y2="0" stroke="#22D3EE" stroke-width="1"/>
+      <line x1="-2" y1="-2" x2="2" y2="2" stroke="#22D3EE" stroke-width="0.5"/>
+      <line x1="2" y1="-2" x2="-2" y2="2" stroke="#22D3EE" stroke-width="0.5"/>
+    </g>
+    <text y="50" text-anchor="middle" fill="rgba(34,211,238,0.55)" font-family="'Source Sans 3',sans-serif" font-size="9.5" font-weight="600" letter-spacing="1">GEN AI</text>
+  </g>
+
+  <!-- Icon 1: ANALYTICS (Top-Right, 321.4°) → x=614, y=191 -->
+  <g transform="translate(614, 191)" filter="url(#glow)">
+    <polygon points="0,-35 30,-17.5 30,17.5 0,35 -30,17.5 -30,-17.5" fill="url(#hexFill)" stroke="rgba(34,211,238,0.45)" stroke-width="1"/>
+    <rect x="-12" y="2" width="5.5" height="11" rx="0.5" fill="none" stroke="rgba(34,211,238,0.8)" stroke-width="1"/>
+    <rect x="-3.5" y="-7" width="5.5" height="20" rx="0.5" fill="none" stroke="rgba(34,211,238,0.8)" stroke-width="1"/>
+    <rect x="5" y="-2" width="5.5" height="15" rx="0.5" fill="none" stroke="rgba(34,211,238,0.8)" stroke-width="1"/>
+    <polyline points="-9,7 -1,-9 8,-4" fill="none" stroke="rgba(34,211,238,0.4)" stroke-width="0.7" stroke-dasharray="2,2"/>
+    <text y="50" text-anchor="middle" fill="rgba(34,211,238,0.5)" font-family="'Source Sans 3',sans-serif" font-size="9.5" font-weight="600" letter-spacing="1">ANALYTICS</text>
+  </g>
+
+  <!-- Icon 2: CLOUD (Right, 12.9°) → x=671, y=441 -->
+  <g transform="translate(671, 441)" filter="url(#glow)">
+    <polygon points="0,-35 30,-17.5 30,17.5 0,35 -30,17.5 -30,-17.5" fill="url(#hexFill)" stroke="rgba(34,211,238,0.45)" stroke-width="1"/>
+    <path d="M -13,5 Q -15,-2 -8,-5 Q -7,-13 0,-11 Q 5,-17 11,-12 Q 18,-11 17,-3 Q 19,3 12,5 Z"
+          fill="none" stroke="rgba(34,211,238,0.85)" stroke-width="1.1" stroke-linejoin="round"/>
+    <line x1="0" y1="2" x2="0" y2="-5" stroke="rgba(34,211,238,0.5)" stroke-width="0.9"/>
+    <polyline points="-3,-2 0,-5 3,-2" fill="none" stroke="rgba(34,211,238,0.5)" stroke-width="0.9"/>
+    <text y="50" text-anchor="middle" fill="rgba(34,211,238,0.5)" font-family="'Source Sans 3',sans-serif" font-size="9.5" font-weight="600" letter-spacing="1">CLOUD</text>
+  </g>
+
+  <!-- Icon 3: SECURITY (Bottom-Right, 64.3°) → x=563, y=635 -->
+  <g transform="translate(563, 635)" filter="url(#glow)">
+    <polygon points="0,-35 30,-17.5 30,17.5 0,35 -30,17.5 -30,-17.5" fill="url(#hexFill)" stroke="rgba(34,211,238,0.45)" stroke-width="1"/>
+    <path d="M 0,-13 L -11,-6 L -11,4 Q -11,12 0,16 Q 11,12 11,4 L 11,-6 Z"
+          fill="none" stroke="rgba(34,211,238,0.85)" stroke-width="1.1"/>
+    <rect x="-4" y="0" width="8" height="6.5" rx="1" fill="none" stroke="rgba(34,211,238,0.65)" stroke-width="0.9"/>
+    <path d="M -2.5,0 Q -2.5,-4 0,-5 Q 2.5,-4 2.5,0" fill="none" stroke="rgba(34,211,238,0.65)" stroke-width="0.9"/>
+    <circle cx="0" cy="3.5" r="1.1" fill="rgba(34,211,238,0.65)"/>
+    <text y="50" text-anchor="middle" fill="rgba(34,211,238,0.5)" font-family="'Source Sans 3',sans-serif" font-size="9.5" font-weight="600" letter-spacing="1">SECURITY</text>
+  </g>
+
+  <!-- Icon 4: DATA PIPELINES (Bottom-Left, 115.7°) → x=237, y=635 -->
+  <g transform="translate(237, 635)" filter="url(#glow)">
+    <polygon points="0,-35 30,-17.5 30,17.5 0,35 -30,17.5 -30,-17.5" fill="url(#hexFill)" stroke="rgba(34,211,238,0.45)" stroke-width="1"/>
+    <circle cx="-12" cy="-4" r="4.5" fill="none" stroke="rgba(34,211,238,0.85)" stroke-width="1"/>
+    <circle cx="12" cy="-4" r="4.5" fill="none" stroke="rgba(34,211,238,0.85)" stroke-width="1"/>
+    <circle cx="0" cy="11" r="4.5" fill="none" stroke="rgba(34,211,238,0.85)" stroke-width="1"/>
+    <line x1="-7.5" y1="-4" x2="7.5" y2="-4" stroke="rgba(34,211,238,0.6)" stroke-width="0.8"/>
+    <polyline points="5,-6.5 8,-4 5,-1.5" fill="none" stroke="rgba(34,211,238,0.6)" stroke-width="0.8"/>
+    <line x1="9" y1="0.5" x2="3.5" y2="7.5" stroke="rgba(34,211,238,0.6)" stroke-width="0.8"/>
+    <polyline points="5.5,5.5 3,8 2,5" fill="none" stroke="rgba(34,211,238,0.6)" stroke-width="0.8"/>
+    <line x1="-3.5" y1="7.5" x2="-9" y2="0.5" stroke="rgba(34,211,238,0.6)" stroke-width="0.8"/>
+    <polyline points="-7,3 -9.5,0 -6.5,0" fill="none" stroke="rgba(34,211,238,0.6)" stroke-width="0.8"/>
+    <text y="48" text-anchor="middle" fill="rgba(34,211,238,0.5)" font-family="'Source Sans 3',sans-serif" font-size="8.5" font-weight="600" letter-spacing="0.8">DATA PIPELINES</text>
+  </g>
+
+  <!-- Icon 5: DATA PLATFORM (Left, 167.1°) → x=129, y=441 -->
+  <g transform="translate(129, 441)" filter="url(#glow)">
+    <polygon points="0,-35 30,-17.5 30,17.5 0,35 -30,17.5 -30,-17.5" fill="url(#hexFill)" stroke="rgba(34,211,238,0.45)" stroke-width="1"/>
+    <ellipse cx="0" cy="-8" rx="12" ry="5" fill="none" stroke="rgba(34,211,238,0.85)" stroke-width="1.1"/>
+    <line x1="-12" y1="-8" x2="-12" y2="9" stroke="rgba(34,211,238,0.85)" stroke-width="1.1"/>
+    <line x1="12" y1="-8" x2="12" y2="9" stroke="rgba(34,211,238,0.85)" stroke-width="1.1"/>
+    <ellipse cx="0" cy="9" rx="12" ry="5" fill="none" stroke="rgba(34,211,238,0.85)" stroke-width="1.1"/>
+    <ellipse cx="0" cy="0.5" rx="12" ry="5" fill="none" stroke="rgba(34,211,238,0.3)" stroke-width="0.6"/>
+    <line x1="-15" y1="16" x2="15" y2="16" stroke="rgba(34,211,238,0.3)" stroke-width="0.6"/>
+    <line x1="-12" y1="14" x2="-15" y2="16" stroke="rgba(34,211,238,0.2)" stroke-width="0.5"/>
+    <line x1="12" y1="14" x2="15" y2="16" stroke="rgba(34,211,238,0.2)" stroke-width="0.5"/>
+    <text y="48" text-anchor="middle" fill="rgba(34,211,238,0.5)" font-family="'Source Sans 3',sans-serif" font-size="8.5" font-weight="600" letter-spacing="0.8">DATA PLATFORM</text>
+  </g>
+
+  <!-- Icon 6: DATA ARCHITECTURE (Top-Left, 218.6°) → x=186, y=191 -->
+  <g transform="translate(186, 191)" filter="url(#glow)">
+    <polygon points="0,-35 30,-17.5 30,17.5 0,35 -30,17.5 -30,-17.5" fill="url(#hexFill)" stroke="rgba(34,211,238,0.45)" stroke-width="1"/>
+    <rect x="-14" y="-13" width="28" height="6" rx="1.5" fill="none" stroke="rgba(34,211,238,0.85)" stroke-width="1"/>
+    <rect x="-11" y="-3" width="22" height="6" rx="1.5" fill="none" stroke="rgba(34,211,238,0.7)" stroke-width="0.9"/>
+    <rect x="-8" y="7" width="16" height="6" rx="1.5" fill="none" stroke="rgba(34,211,238,0.55)" stroke-width="0.8"/>
+    <line x1="-7" y1="-7" x2="-6" y2="-3" stroke="rgba(34,211,238,0.3)" stroke-width="0.5"/>
+    <line x1="7" y1="-7" x2="6" y2="-3" stroke="rgba(34,211,238,0.3)" stroke-width="0.5"/>
+    <line x1="-5" y1="3" x2="-4" y2="7" stroke="rgba(34,211,238,0.3)" stroke-width="0.5"/>
+    <line x1="5" y1="3" x2="4" y2="7" stroke="rgba(34,211,238,0.3)" stroke-width="0.5"/>
+    <text y="48" text-anchor="middle" fill="rgba(34,211,238,0.5)" font-family="'Source Sans 3',sans-serif" font-size="8" font-weight="600" letter-spacing="0.8">DATA ARCHITECTURE</text>
+  </g>
+
+  <!-- Small orbit dots between icons -->
+  <g fill="#22D3EE" opacity="0.25">
+    <circle cx="520" cy="145" r="1.5"/><circle cx="660" cy="320" r="1.5"/>
+    <circle cx="640" cy="550" r="1.5"/><circle cx="400" cy="675" r="1.5"/>
+    <circle cx="160" cy="550" r="1.5"/><circle cx="140" cy="320" r="1.5"/>
+    <circle cx="280" cy="145" r="1.5"/>
+  </g>
+
+  <!-- Ambient particles -->
+  <g fill="#22D3EE" opacity="0.18">
+    <circle cx="42" cy="60" r="1"/><circle cx="758" cy="100" r="0.8"/>
+    <circle cx="28" cy="680" r="0.8"/><circle cx="772" cy="650" r="1"/>
+    <circle cx="680" cy="760" r="0.8"/><circle cx="120" cy="750" r="0.8"/>
+    <circle cx="400" cy="785" r="0.8"/><circle cx="750" cy="400" r="0.8"/>
+    <circle cx="50" cy="400" r="0.8"/>
+  </g>
+
+  <!-- Edge fades -->
+  <defs>
+    <linearGradient id="bFade" x1="0%" y1="90%" x2="0%" y2="100%"><stop offset="0%" style="stop-color:#060D1A;stop-opacity:0"/><stop offset="100%" style="stop-color:#060D1A;stop-opacity:0.6"/></linearGradient>
+    <linearGradient id="tFade" x1="0%" y1="0%" x2="0%" y2="5%"><stop offset="0%" style="stop-color:#060D1A;stop-opacity:0.3"/><stop offset="100%" style="stop-color:#060D1A;stop-opacity:0"/></linearGradient>
+  </defs>
+  <rect x="0" y="750" width="800" height="50" fill="url(#bFade)"/>
+  <rect x="0" y="0" width="800" height="40" fill="url(#tFade)"/>
+</svg>
